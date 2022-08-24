@@ -1,0 +1,634 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-12">Bem vindo, aqui você pode verificar as informações de cada persongaem de Star Wars</h3>
+    <hr />
+    <div>
+        <h4>Pessoas</h4>
+        <p>Escolha o código de pessoa para mostrar as informações de uma pessoa:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="idPessoa" id="idPessoa" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarPessoa">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparPessoa">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesPessoa">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Peso</th>
+                            <th>Cor do cabelo</th>
+                            <th>Cor da pele</th>
+                            <th>Cor dos olhos</th>
+                            <th>Ano de nascimento</th>
+                            <th>Gênero</th>
+                            <th>Mundo natal</th>
+                            <th>Filmes</th>
+                            <th>Espécie</th>
+                            <th>Veículos</th>
+                            <th>Aeronaves</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoPessoa">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+    <hr></hr>
+    <div>
+        <h4>Planetas</h4>
+        <p>Escolha o código de planeta para mostrar as informações de um planeta:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="idPlaneta" id="idPlaneta" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarPlaneta">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparPlaneta">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesPlaneta">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Período de rotação</th>
+                            <th>Período orbital</th>
+                            <th>Diâmetro</th>
+                            <th>Clima</th>
+                            <th>Força da gravidade</th>
+                            <th>Terreno</th>
+                            <th>Água da superfície</th>
+                            <th>População total</th>
+                            <th>Residentes</th>
+                            <th>Filmes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoPlaneta">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+    <hr></hr>
+    <div>
+        <h4>Filmes</h4>
+        <p>Escolha o código de filme para mostrar as informações de um filme:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')"" name="idFilme" id="idFilme" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarFilme">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparFilme">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesFilme">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Número do episódio</th>
+                            <th>Abertura</th>
+                            <th>Diretor</th>
+                            <th>Produtor</th>
+                            <th>Data de lançamento</th>
+                            <th>Personagens</th>
+                            <th>Planetas</th>
+                            <th>Aeronaves</th>
+                            <th>Veículos</th>
+                            <th>Espécies</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoFilme">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+    <hr></hr>
+    <div>
+        <h4>Espécies</h4>
+        <p>Escolha o código de espécie para mostrar as informações de uma espécie:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="idEspecie" id="idEspecie" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarEspecie">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparEspecie">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesEspecie">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Classificação</th>
+                            <th>Designação</th>
+                            <th>Altura média</th>
+                            <th>Cores da pele</th>
+                            <th>Cores do cabelo</th>
+                            <th>Cores nos olhos</th>
+                            <th>Tempo de médio de vida</th>
+                            <th>Mundo natal</th>
+                            <th>Linguagem</th>
+                            <th>Pessoas</th>
+                            <th>Filmes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoEspecie">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+    <hr></hr>
+    <div>
+        <h4>Veículos</h4>
+        <p>Escolha o código de veículo para mostrar as informações de um veículo:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="idVehicle" id="idVehicle" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarVehicle">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparVehicle">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesVehicle">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Modelo</th>
+                            <th>Fabricante</th>
+                            <th>Valor em créditos</th>
+                            <th>Tamanho</th>
+                            <th>Velocidade máxima na atmosfera</th>
+                            <th>Tripulação</th>
+                            <th>Passageiros</th>
+                            <th>Capacidade máxima de produtos</th>
+                            <th>Consumíveis</th>
+                            <th>Classe</th>
+                            <th>Pilotos</th>
+                            <th>Filmes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoVehicle">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+    <hr></hr>
+    <div>
+        <h4>Aeronaves</h4>
+        <p>Escolha o código de aeronave para mostrar as informações de uma aeronave:</p>
+        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="idAeronave" id="idAeronave" />
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnFiltrarAeronave">
+            <i class="fa fa-search"></i>
+            Pesquisar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm  btn-sm" id="btnLimparAeronave">
+            Limpar
+        </button>
+    </div>
+    <p>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table informacoesAeronave">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Modelo</th>
+                            <th>Frabricante</th>
+                            <th>Valor em créditos</th>
+                            <th>Tamanho</th>
+                            <th>Velocidade máxima na atmosfera</th>
+                            <th>Tripulação</th>
+                            <th>Passageiros</th>
+                            <th>Capacidade máxima de produtos</th>
+                            <th>Consumíveis</th>
+                            <th>Classificação no hiperdive</th>
+                            <th>MGLT</th>
+                            <th>Classe de aeronave</th>
+                            <th>Pilotos</th>
+                            <th>Filmes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infoAeronave">
+                        <tr class="centralizar">
+                            <td class="alert alert-danger" colspan="12">Nenhum registro encontrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#btnFiltrarPessoa").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+            if ($("#idPessoa").val() < 0) {
+                $("#idPessoa").val(0);
+            } 
+                
+                var codigoPessoa = $("#idPessoa").val();
+                $.ajax({
+                    url: "@Url.Content("~/Home/InfoPessoa")",
+                    async: false,
+                    type: "post",
+                    dataType: "json",
+                    data: { idPessoa: codigoPessoa },
+                    cache: false,
+                    success: function (result) {
+                        Swal.close();
+                        if (result.pessoa !== "null") {
+                            var resultado = "";
+                            //resultado += "<tr>";
+                            resultado += "<td>" + result.pessoa.name + "</td>";
+                            resultado += "<td>" + result.pessoa.height + "</td>";
+                            resultado += "<td>" + result.pessoa.hair_color + "</td>";
+                            resultado += "<td>" + result.pessoa.skin_color + "</td>";
+                            resultado += "<td>" + result.pessoa.eye_color + "</td>";
+                            resultado += "<td>" + result.pessoa.birth_year + "</td>";
+                            resultado += "<td>" + result.pessoa.gender + "</td>";
+                            resultado += "<td>" + result.pessoa.mundoNatal + "</td>";
+                            resultado += "<td>" + result.pessoa.filmes + "</td>";
+                            resultado += "<td>" + result.pessoa.especies + "</td>";
+                            resultado += "<td>" + result.pessoa.veiculos + "</td>";
+                            resultado += "<td>" + result.pessoa.aeronaves + "</td>";
+                            //resultado += "<td>" + result.pessoa.created + "</td>";
+                            //resultado += "<td>" + result.pessoa.edited + "</td>";
+                            //resultado += "<td>" + result.pessoa.url + "</td>";
+                            resultado += "</tr>";
+
+                            $("#infoPessoa").html(resultado);
+
+                        }
+                        else {
+                            $("#infoPessoa").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                        }
+                    }
+                });
+            
+    });
+
+    $("#btnLimparPessoa").on("click", function(){
+        $("#infoPessoa").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idPessoa").val('');
+    });
+
+    $("#btnFiltrarPlaneta").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+        if ($("#idPlaneta").val() < 0) {
+            $("#idPlaneta").val(0);
+        } 
+        $.ajax({
+            url: "@Url.Content("~/Home/InfoPlaneta")",
+            async: false,
+            type: "post",
+            dataType: "json",
+            data: { idPlaneta: $("#idPlaneta").val() },
+            cache: false,
+            success: function (result) {
+                Swal.close();
+                if (result.planeta !== "null") {
+                    var resultado = "";
+                    //resultado += "<tr>";
+                    resultado += "<td>" + result.planeta.name + "</td>";
+                    resultado += "<td>" + result.planeta.rotation_period + "</td>";
+                    resultado += "<td>" + result.planeta.orbital_period + "</td>";
+                    resultado += "<td>" + result.planeta.diameter + "</td>";
+                    resultado += "<td>" + result.planeta.climate + "</td>";
+                    resultado += "<td>" + result.planeta.gravity + "</td>";
+                    resultado += "<td>" + result.planeta.terrain + "</td>";
+                    resultado += "<td>" + result.planeta.surface_water + "</td>";
+                    resultado += "<td>" + result.planeta.population + "</td>";
+                    resultado += "<td>" + result.planeta.residentes + "</td>";
+                    resultado += "<td>" + result.planeta.filmes + "</td>";
+                    //resultado += "<td>" + result.planeta.created + "</td>";
+                    //resultado += "<td>" + result.planeta.edited + "</td>";
+                    //resultado += "<td>" + result.planeta.url + "</td>";
+                    resultado += "</tr>";
+
+                    $("#infoPlaneta").html(resultado);
+
+                 }
+                 else 
+                 {
+                    $("#infoPlaneta").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                    }
+                 }
+            });
+    });
+
+    $("#btnLimparPlaneta").on("click", function(){
+        $("#infoPlaneta").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idPlaneta").val('');
+    });
+
+     $("#btnFiltrarFilme").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+        if ($("#idFilme").val() < 0) {
+            $("#idFilme").val(0);
+        } 
+        $.ajax({
+            url: "@Url.Content("~/Home/InfoFilme")",
+            async: false,
+            type: "post",
+            dataType: "json",
+            data: { idFilme: $("#idFilme").val() },
+            cache: false,
+            success: function (result) {
+                Swal.close();
+                if (result.filme !== "null") {
+                    var resultado = "";
+                    //resultado += "<tr>";
+                    resultado += "<td>" + result.filme.title + "</td>";
+                    resultado += "<td>" + result.filme.episode_id + "</td>";
+                    resultado += "<td>" + result.filme.opening_crawl + "</td>";
+                    resultado += "<td>" + result.filme.director + "</td>";
+                    resultado += "<td>" + result.filme.producer + "</td>";
+                    resultado += "<td>" + result.filme.release_date + "</td>";
+                    resultado += "<td>" + result.filme.personagens + "</td>";
+                    resultado += "<td>" + result.filme.planetas + "</td>";
+                    resultado += "<td>" + result.filme.aeronaves + "</td>";
+                    resultado += "<td>" + result.filme.veiculos + "</td>";
+                    resultado += "<td>" + result.filme.especies + "</td>";
+                    //resultado += "<td>" + result.filme.created + "</td>";
+                    //resultado += "<td>" + result.filme.edited + "</td>";
+                    //resultado += "<td>" + result.filme.url + "</td>";
+                    resultado += "</tr>";
+
+                    $("#infoFilme").html(resultado);
+
+                 }
+                 else 
+                 {
+                    $("#infoFilme").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                    }
+                 }
+            });
+    });
+
+    $("#btnLimparFilme").on("click", function(){
+        $("#infoFilme").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idFilme").val('');
+    });
+
+    $("#btnFiltrarEspecie").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+        if ($("#idEspecie").val() < 0) {
+            $("#idEspecie").val(0);
+        } 
+        $.ajax({
+            url: "@Url.Content("~/Home/InfoEspecie")",
+            async: false,
+            type: "post",
+            dataType: "json",
+            data: { idEspecie: $("#idEspecie").val() },
+            cache: false,
+            success: function (result) {
+                Swal.close();
+                if (result.especie !== "null") {
+                    var resultado = "";
+                    //resultado += "<tr>";
+                    resultado += "<td>" + result.especie.name + "</td>";
+                    resultado += "<td>" + result.especie.classification + "</td>";
+                    resultado += "<td>" + result.especie.designation + "</td>";
+                    resultado += "<td>" + result.especie.average_height + "</td>";
+                    resultado += "<td>" + result.especie.skin_colors + "</td>";
+                    resultado += "<td>" + result.especie.hair_colors + "</td>";
+                    resultado += "<td>" + result.especie.eye_colors + "</td>";
+                    resultado += "<td>" + result.especie.average_lifespan + "</td>";
+                    resultado += "<td>" + result.especie.mundoNatal + "</td>";
+                    resultado += "<td>" + result.especie.language + "</td>";
+                    resultado += "<td>" + result.especie.pessoas + "</td>";
+                    resultado += "<td>" + result.especie.filmes + "</td>";
+                    //resultado += "<td>" + result.especie.created + "</td>";
+                    //resultado += "<td>" + result.especie.edited + "</td>";
+                    //resultado += "<td>" + result.especie.url + "</td>";
+                    resultado += "</tr>";
+
+                    $("#infoEspecie").html(resultado);
+
+                 }
+                 else 
+                 {
+                    $("#infoEspecie").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                    }
+                 }
+            });
+    });
+
+    $("#btnLimparEspecie").on("click", function(){
+        $("#infoEspecie").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idEspecie").val('');
+    });
+
+    $("#btnFiltrarVehicle").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+        if ($("#idVehicle").val() < 0) {
+            $("#idVehicle").val(0);
+        } 
+        $.ajax({
+            url: "@Url.Content("~/Home/InfoVehicle")",
+            async: false,
+            type: "post",
+            dataType: "json",
+            data: { idVehicle: $("#idVehicle").val() },
+            cache: false,
+            success: function (result) {
+                Swal.close();
+                if (result.vehicle !== "null") {
+                    var resultado = "";
+                    //resultado += "<tr>";
+                    resultado += "<td>" + result.vehicle.name + "</td>";
+                    resultado += "<td>" + result.vehicle.model + "</td>";
+                    resultado += "<td>" + result.vehicle.manufacturer + "</td>";
+                    resultado += "<td>" + result.vehicle.cost_in_credits + "</td>";
+                    resultado += "<td>" + result.vehicle.length + "</td>";
+                    resultado += "<td>" + result.vehicle.max_atmosphering_speed + "</td>";
+                    resultado += "<td>" + result.vehicle.crew + "</td>";
+                    resultado += "<td>" + result.vehicle.passengers + "</td>";
+                    resultado += "<td>" + result.vehicle.cargo_capacity + "</td>";
+                    resultado += "<td>" + result.vehicle.consumables + "</td>";
+                    resultado += "<td>" + result.vehicle.vehicle_class + "</td>";
+                    resultado += "<td>" + result.vehicle.pilotos + "</td>";
+                    resultado += "<td>" + result.vehicle.filmes + "</td>";
+                    //resultado += "<td>" + result.vehicle.created + "</td>";
+                    //resultado += "<td>" + result.vehicle.edited + "</td>";
+                    //resultado += "<td>" + result.vehicle.url + "</td>";
+                    resultado += "</tr>";
+
+                    $("#infoVehicle").html(resultado);
+
+                 }
+                 else 
+                 {
+                    $("#infoVehicle").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                    }
+                 }
+            });
+    });
+
+    $("#btnLimparVehicle").on("click", function(){
+        $("#infoVehicle").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idVehicle").val('');
+    });
+
+    $("#btnFiltrarAeronave").on("click", function () {
+        Swal.fire({
+                  title: 'Por favor aguarde, carregando!',
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading()
+                  }
+                });
+        if ($("#idAeronave").val() < 0) {
+            $("#idAeronave").val(0);
+        } 
+        $.ajax({
+            url: "@Url.Content("~/Home/InfoAeronave")",
+            async: false,
+            type: "post",
+            dataType: "json",
+            data: { idAeronave: $("#idAeronave").val() },
+            cache: false,
+            success: function (result) {
+                Swal.close();
+                if (result.aeronave !== "null") {
+                    var resultado = "";
+                    //resultado += "<tr>";
+                    resultado += "<td>" + result.aeronave.name + "</td>";
+                    resultado += "<td>" + result.aeronave.model + "</td>";
+                    resultado += "<td>" + result.aeronave.manufacturer + "</td>";
+                    resultado += "<td>" + result.aeronave.cost_in_credits + "</td>";
+                    resultado += "<td>" + result.aeronave.length + "</td>";
+                    resultado += "<td>" + result.aeronave.max_atmosphering_speed + "</td>";
+                    resultado += "<td>" + result.aeronave.crew + "</td>";
+                    resultado += "<td>" + result.aeronave.passengers + "</td>";
+                    resultado += "<td>" + result.aeronave.cargo_capacity + "</td>";
+                    resultado += "<td>" + result.aeronave.consumables + "</td>";
+                    resultado += "<td>" + result.aeronave.hyperdrive_rating + "</td>";
+                    resultado += "<td>" + result.aeronave.MGLT + "</td>";
+                    resultado += "<td>" + result.aeronave.starship_class + "</td>";
+                    resultado += "<td>" + result.aeronave.pilotos + "</td>";
+                    resultado += "<td>" + result.aeronave.filmes + "</td>";
+                    //resultado += "<td>" + result.aeronave.created + "</td>";
+                    //resultado += "<td>" + result.aeronave.edited + "</td>";
+                    //resultado += "<td>" + result.aeronave.url + "</td>";
+                    resultado += "</tr>";
+
+                    $("#infoAeronave").html(resultado);
+
+                 }
+                 else 
+                 {
+                    $("#infoAeronave").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'>O registro não foi encontrado</td>\
+                                                           </tr>");
+                    }
+                 }
+            });
+    });
+
+    $("#btnLimparAeronave").on("click", function(){
+        $("#infoAeronave").html("<tr class='centralizar'>\
+                                                            <td class='alert alert-danger' colspan='12'></td>\
+                                                           </tr>");
+        $("#idAeronave").val('');
+    });
+
+
+</script>
